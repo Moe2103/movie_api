@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructions</title>
-  </head>
-  <body>
-    <h1>Movie-API</h1>
-    <p>The web application will provide users with access to information about different movies, directors, and genres. Users will be able to sign up, update their personal information, and create a list of their favorite movies.</p>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <title>documentation</title>
+    </head>
+    <body>
+        <p>APP TITLE 'MyFLIX'</p>
+<P>* The web application will provide users with access to information about different
+movies, directors, and genres.</P> 
+<p>* Users will be able to sign up, update their
+personal information, and create a list of their favorite movies.</p>
+<table style="width:100%">
+    <tr>
+      <th>REQUEST</th>
+      <th>URL</th>
+      <th>Http Method</th>
+      <th>Response</th>
+    </tr>
+    <tr>
+      <td>Return a list of ALL movies to the user</td>
+      <td>/movies</td>
+      <td>GET</td>
+      <td>returns json objects of all movies</td>
+    </tr>
+    <tr>
+      <td>Return data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title to the user</td>
+      <td>/movies/:movieTitle</td>
+      <td>GET</td>
+      <td>returns json object of selected movie title</td>
+    </tr>
+    <tr>
+        <td>Return data about a genre (description) by name/title (e.g., “Thriller”)</td>
+        <td>/movies/genre/:movieGenre</td>
+        <td>GET</td>
+        <td>returns json objects of all movies included in selected genre</td>
+    </tr>
+    <tr>
+        <td>Return data about a director (bio, birth year, death year) by name</td>
+        <td>/directors/:name</td>
+        <td>GET</td>
+        <td>returns json array containing bio/dob/dod keys and values</td>
+    </tr> 
+    <tr>
+        <td>Allow new users to register</td>
+        <td>/users</td>
+        <td>POST</td>
+        <td>adds a new user to register</td>
+      </tr>
+      <tr>
+        <td>Allow users to update their user info (username)</td>
+        <td>/users/:name</td>
+        <td>PUT</td>
+        <td>updates user data</td>
+      </tr>
+      <tr>
+        <td>Allow users to add a movie to their list of favorites (showing only a text that a movie has been added—more on this later)</td>
+        <td>/favourites/add/:title</td>
+        <td>PUT</td>
+        <td>adds selected movie title to favourites list</td>
+      </tr>
+      <tr>
+        <td>Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed—more on this later)</td>
+        <td>/favourites/remove/:title'</td>
+        <td>DELETE</td>
+        <td>removes selected movie from favourites list</td>
+      </tr>
+      <tr>
+        <td>Allow existing users to deregister (showing only a text that a user email has been removed—more on this later)</td>
+        <td>/users/delete/:name</td>
+        <td>DELETE</td>
+        <td>deletes user from register</td>
+      </tr>
+      
+  </table>
+    </body>
 </html>
