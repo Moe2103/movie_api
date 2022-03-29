@@ -1,7 +1,7 @@
 const express = require('express'),
       morgan = require('morgan'),
       mongoose = require('mongoose'),
-      Models = require('./models.js'),
+      Models = require('models.js'),
       bodyParser = require('body-parser'),
       { check, validationResult } = require('express-validator');
 
@@ -39,7 +39,7 @@ app.use(cors({
 
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-let auth = require('./auth')(app);//This ensures that Express is available in “auth.js” file as well.
+let auth = require('auth')(app);//This ensures that Express is available in “auth.js” file as well.
 
 const passport = require('passport');
 require('./passport');
